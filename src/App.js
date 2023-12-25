@@ -4,8 +4,8 @@ import "./App.css";
 import ProductList from "./features/productlist/ProductList";
 import NavBar from "./features/navbar/Navbar";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./pages/LoginPage";
+import Signup from "./pages/SignupPage";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +13,9 @@ import {
   Link,
 } from "react-router-dom";
 import Navbar from "./features/navbar/Navbar";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -21,18 +24,22 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <LoginPage />,
   },
   {
     path: "/signup",
-    element: <Signup />,
+    element: <SignupPage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
   },
 ]);
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="App">
         <RouterProvider router={router} />
       </div>
